@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
 
+// import {compose,pipe} from 'lodash/fp';
+// import Home from './Home';
+// import Create from './Create';
+// import Update from './Update';
+import { BrowserRouter,Routes, Route } from 'react-router-dom';
+import {Provider} from 'react-redux';
+import {store} from './Redux2/store';
+
+
+import Home from '../src/Redux2/Home'
 function App() {
+  
+
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <BrowserRouter>
+      <Routes>
+      
+      <Route path="/home" element={<Home/>}/>
+      </Routes>
+      </BrowserRouter> */}
+      <Provider store={store}>
+      <Home/>
+      </Provider>
     </div>
   );
 }
